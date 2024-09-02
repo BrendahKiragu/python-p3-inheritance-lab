@@ -21,10 +21,13 @@ class Teacher(User):
 
 
     pass
-    def teach(self):
+    def teach(self, years_of_experience):
+        self.years = years_of_experience
+        print(f"Hello, my name is {self.first_name} {self.last_name}. I have {self.years} in :")
+        
         return self.knowledge[random.randint(0, len(self.knowledge))]
     
-mwas = Teacher("steve", 'mwas')
-print(mwas.teach())
+teacher1 = Teacher("Brendah", 'Kiragu')
+print(teacher1.teach('2 years of experience'))
 
         
