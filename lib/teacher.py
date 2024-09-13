@@ -5,29 +5,21 @@ from user import User
 import random
 
 class Teacher(User):
-    def __init__(self, first_name, last_name, knowledge = [
-            "str is a data type in Python",
-            "programming is hard, but it's worth it",
-            "JavaScript async web request",
-            "Python function call definition",
-            "object-oriented teacher instance",
-            "programming computers hacking learning terminal",
-            "pipenv install pipenv shell",
-            "pytest -x flag to fail fast",
-        ]):
-        
+
+    def __init__(self, first_name, last_name):
         super().__init__(first_name, last_name)
-        self.knowledge = knowledge
-
-
-    pass
-    def teach(self, years_of_experience):
-        self.years = years_of_experience
-        print(f"Hello, my name is {self.first_name} {self.last_name}. I have {self.years} in :")
+        self.knowledge = ["str is a data type in Python",
+                      "programming is hard, but it's worth it",
+                      "JavaScript async web request",
+                      "Python function call definition",
+                      "object-oriented teacher instance",
+                      "programming computers hacking learning terminal",
+                      "pipenv install pipenv shell",
+                      "pytest -x flag to fail fast",]
         
-        return self.knowledge[random.randint(0, len(self.knowledge))]
-    
-teacher1 = Teacher("Brendah", 'Kiragu')
-print(teacher1.teach('2 years of experience'))
-
+    def teach(self):
+        subject = random.randint(0, len(self.knowledge)-1)
+        return self.knowledge[subject]
         
+teacher1 = Teacher("Joe", "Joel")    
+print(teacher1.teach())
